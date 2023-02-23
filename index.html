@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHA</title>
+  <script src="./sjcl.js"></script>
+  <script src="./md5.js"></script>
+  <script src="./b35e.js"></script>
+</head>
+<body>
+  <div>
+    <input type="text" name="" id="text" />
+    <input type="number" min="1" max="8" name="" id="num" />
+    <button onclick="getP()" name="" id="">Ok</button>
+  </div>
+  <div>
+    <textarea id="ta" name="" rows="2" cols="45" disabled></textarea>
+    <button onclick="copyP()" name="" id="">Copy</button>
+  </div>
+  
+  <script>
+    const tttt = document.getElementById("text");
+    const nnnn = document.getElementById("num");
+    const taaa = document.getElementById("ta");
+    
+    const getP = () => {
+      taaa.value = getPass(tttt.value, nnnn.value);
+    }
+    const copyP = () => {
+      navigator.clipboard.writeText(taaa.value);
+    }
+  </script>
+</body>
+</html>
